@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 09:49:47 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/07 07:04:29 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/07 11:43:28 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,15 @@
 # include "libft/libft.h"
 # include <stdlib.h>
 # include <dirent.h>
+# include <sys/stat.h>
+# include <sys/types.h>
+# include <pwd.h>
+# include <grp.h>
+# include <time.h>
 
 typedef struct		s_list
 {
 	void			*data;
-	int				size;
 	struct s_list	*next;
 }					t_list;
 
@@ -41,14 +45,22 @@ typedef struct	s_file
 	char		*username;
 	char		*groupname;
 	int			byte_size;
-	void		*date_modified;
+	char		*date_modified;
+	t_list		*sub_dirs;
 	char		*name;
 }				t_file;
 
+t_list			*ft_create_elem(void *data);
+void			ft_list_push_back(t_list **begin_list, void *data);
+void			ft_list_push_front(t_list **begin_list, void *data);
+
 void			ft_error(char *error);
+int				ft_isdir(char *path);
+char			*ft_new_path(char *original, char *dir);
 
 void			ft_process_args(t_frmt *frmt, char **argv, int count);
 
-void			read_files(char *path, t_list *list, t_frmt *frmt, int is_rec);
+void			read_files(char *path, t_list *list, t_frmt *frmt);
+void			ft_getstats(char *path, t_file *file);
 
 #endif

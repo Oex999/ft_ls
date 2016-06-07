@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   Utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/06 10:00:27 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/07 10:43:42 by oexall           ###   ########.fr       */
+/*   Created: 2016/06/07 08:18:34 by oexall            #+#    #+#             */
+/*   Updated: 2016/06/07 08:25:03 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-int	main(int argc, char **argv)
+int		ft_isdir(char *path)
 {
-	 t_frmt	frmt;
-	 t_list	*list;
+	DIR	*dir;
 
-	 if (argc > 1)
-		 ft_process_args(&frmt, argv, argc - 1);
-	 list = NULL;
-	 read_files(".", list, &frmt);
-	 return (0);
+	if ((dir = opendir(path)) != NULL)
+	{
+		closedir(dir);
+		return (1);
+	}
+	return (0);
+}
+
+char	*ft_new_path(char *original, char *dir)
+{
+	char	*new_path;
+
+	new_path = ft_strjoin(original, "/");
+	new_path = ft_strjoin(new_path, dir);
+	return (new_path);
 }

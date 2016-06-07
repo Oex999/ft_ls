@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   ft_list_push_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/06 10:00:27 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/07 10:43:42 by oexall           ###   ########.fr       */
+/*   Created: 2016/06/07 11:31:48 by oexall            #+#    #+#             */
+/*   Updated: 2016/06/07 11:34:46 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include "../ft_ls.h"
 
-int	main(int argc, char **argv)
+void	ft_list_push_back(t_list **begin_list, void *data)
 {
-	 t_frmt	frmt;
-	 t_list	*list;
+	t_list	*list;
 
-	 if (argc > 1)
-		 ft_process_args(&frmt, argv, argc - 1);
-	 list = NULL;
-	 read_files(".", list, &frmt);
-	 return (0);
+	list = *begin_list;
+	if (list)
+	{
+		while (list->next)
+			list = list->next;
+		list->next = ft_create_elem(data);
+	}
+	else
+		*begin_list = ft_create_elem(data);
 }

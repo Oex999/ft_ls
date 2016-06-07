@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   ft_create_elem.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/06 10:00:27 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/07 10:43:42 by oexall           ###   ########.fr       */
+/*   Created: 2016/06/07 11:09:25 by oexall            #+#    #+#             */
+/*   Updated: 2016/06/07 11:11:57 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include "../ft_ls.h"
 
-int	main(int argc, char **argv)
+t_list	*ft_create_elem(void *data)
 {
-	 t_frmt	frmt;
-	 t_list	*list;
+	t_list	*tmp;
 
-	 if (argc > 1)
-		 ft_process_args(&frmt, argv, argc - 1);
-	 list = NULL;
-	 read_files(".", list, &frmt);
-	 return (0);
+	if ((tmp = (t_list *)malloc(sizeof(t_list))))
+	{
+		tmp->data = data;
+		tmp->next = NULL;
+	}
+	return (tmp);
 }
