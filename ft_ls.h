@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 09:49:47 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/06 15:40:16 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/07 07:04:29 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ void			ft_error(char *error);
 
 void			ft_process_args(t_frmt *frmt, char **argv, int count);
 
-void			read_files(char *pathi, t_list *list, t_frmt *frmt);
+void			read_files(char *path, t_list *list, t_frmt *frmt, int is_rec);
 
 #endif

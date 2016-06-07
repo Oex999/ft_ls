@@ -1,25 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   stats.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/06 10:00:27 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/07 07:04:44 by oexall           ###   ########.fr       */
+/*   Created: 2016/06/07 07:02:47 by oexall            #+#    #+#             */
+/*   Updated: 2016/06/07 07:03:16 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
 
-int	main(int argc, char **argv)
-{
-	 t_frmt	frmt;
-	 t_list	*list;
-
-	 if (argc > 1)
-		 ft_process_args(&frmt, argv, argc - 1);
-	 list = NULL;
-	 read_files(".", list, &frmt, 0);
-	 return (0);
-}
