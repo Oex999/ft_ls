@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   ft_clear_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/06 10:00:27 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/07 16:03:12 by oexall           ###   ########.fr       */
+/*   Created: 2016/06/07 15:56:07 by oexall            #+#    #+#             */
+/*   Updated: 2016/06/07 15:58:28 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include "../ft_ls.h"
 
-int	main(int argc, char **argv)
+void	ft_clear_list(t_list **begin_list)
 {
-	 t_frmt	frmt;
-	 t_list	*list;
+	t_list	*list;
+	t_list	*tmp;
 
-	 if (argc > 1)
-		 ft_process_args(&frmt, argv, argc - 1);
-	 list = NULL;
-	 read_files(".", &list, &frmt);
-	 //display_files(&list, &frmt);
-	 ft_clear_list(&list);
-	 return (0);
+	list = *begin_list;
+	tmp = NULL;
+	while (list)
+	{
+		if (list->next)
+			tmp = list->next;
+		else
+			tmp = NULL;
+		free(list);
+		list = tmp;
+	}
 }

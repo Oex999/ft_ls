@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 09:49:47 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/07 11:43:28 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/07 16:01:42 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct	s_file
 t_list			*ft_create_elem(void *data);
 void			ft_list_push_back(t_list **begin_list, void *data);
 void			ft_list_push_front(t_list **begin_list, void *data);
+void			ft_clear_list(t_list **begin_list);
 
 void			ft_error(char *error);
 int				ft_isdir(char *path);
@@ -60,7 +61,9 @@ char			*ft_new_path(char *original, char *dir);
 
 void			ft_process_args(t_frmt *frmt, char **argv, int count);
 
-void			read_files(char *path, t_list *list, t_frmt *frmt);
+void			read_files(char *path, t_list **list, t_frmt *frmt);
 void			ft_getstats(char *path, t_file *file);
+void			display_files(t_list **list, t_frmt *frmt);
+void			ft_print_l_file(t_file *file);
 
 #endif
