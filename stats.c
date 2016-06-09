@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/07 07:02:47 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/07 10:43:29 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/09 13:15:35 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_getpermissions(struct stat *f_stat, t_file *file)
 	file->permissions[7] = (f_stat->st_mode & S_IROTH) ? 'r' : '-';
 	file->permissions[8] = (f_stat->st_mode & S_IWOTH) ? 'w' : '-';
 	file->permissions[9] = (f_stat->st_mode & S_IXOTH) ? 'x' : '-';
+	file->permissions[10] = '\0';
 }
 
 void	ft_getstats(char *path, t_file *file)
@@ -37,5 +38,5 @@ void	ft_getstats(char *path, t_file *file)
 	file->username = getpwuid(f_stats.st_uid)->pw_name;
 	file->groupname = getgrgid(f_stats.st_gid)->gr_name;
 	file->byte_size = (int)f_stats.st_size;
-	file->date_modified = ctime(&f_stats.st_mtime);
+	file->date_modified = ctime(&f_stats.st_ctime);
 }

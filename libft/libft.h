@@ -6,12 +6,13 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/09 08:25:19 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/05/27 15:17:20 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/06/09 07:24:28 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include "ft_printf.h"
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>

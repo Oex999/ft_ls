@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Utils.c                                            :+:      :+:    :+:   */
+/*   ft_create_special.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/07 08:18:34 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 11:50:23 by oexall           ###   ########.fr       */
+/*   Created: 2016/06/09 06:43:51 by oexall            #+#    #+#             */
+/*   Updated: 2016/06/09 06:48:49 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_ls.h"
+#include "../ft_ls.h"
 
-int		ft_isdir(char *path)
+t_list	*ft_create_special(size_t data_size, void *data)
 {
-	DIR	*dir;
+	t_list	*tmp;
 
-	if ((dir = opendir(path)) != NULL)
+	tmp = (t_list *)malloc(sizeof(t_list *));
+	if (tmp)
 	{
-		closedir(dir);
-		return (1);
+		tmp->data = malloc(data_size);
+		tmp->data = ft_memcpy(tmp->data, data, data_size);
+		tmp->next = NULL;
 	}
-	return (0);
+	else
+		return (NULL);
+	return (tmp);
 }
-
-char	*ft_new_path(char *original, char *dir)
-{
-	char	*new_path;
-
-	new_path = ft_strjoin(original, "/");
-	new_path = ft_strjoin(new_path, dir);
-	return (new_path);
-}
-

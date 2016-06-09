@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Utils.c                                            :+:      :+:    :+:   */
+/*   ft_substring.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/07 08:18:34 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 11:50:23 by oexall           ###   ########.fr       */
+/*   Created: 2016/06/09 07:40:42 by oexall            #+#    #+#             */
+/*   Updated: 2016/06/09 07:44:18 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-int		ft_isdir(char *path)
+char	*ft_substr(int start, int len, char *str)
 {
-	DIR	*dir;
+	char	*n_str;
+	int		c;
 
-	if ((dir = opendir(path)) != NULL)
+	n_str = NULL;
+	c = 0;
+	if ((n_str = (char *)malloc(sizeof(char) * (len + 1))))
 	{
-		closedir(dir);
-		return (1);
+		while (c < len && (str[start + c] != '\0'))
+		{
+			n_str[c] = str[start + c];
+			c++;
+		}
 	}
-	return (0);
+	return (n_str);
 }
-
-char	*ft_new_path(char *original, char *dir)
-{
-	char	*new_path;
-
-	new_path = ft_strjoin(original, "/");
-	new_path = ft_strjoin(new_path, dir);
-	return (new_path);
-}
-
