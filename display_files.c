@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/07 14:51:52 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 13:47:54 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/09 14:30:12 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,24 @@ void	ft_print_l_file(t_file *file)
 	ft_putstr(file->name);
 
 	ft_putchar('\n');
+}
+
+int		get_block_size(t_list **begin_list)
+{
+	int		size;
+	t_list	*list;
+	t_file	*file;
+
+	list = *begin_list;
+	size = 0;
+	while (list)
+	{
+		file = (t_file *)list->data;
+		size += (int)file->block_size;
+		file = NULL;
+		list = list->next;
+	}
+	return (size);
 }
 
 void	files(t_list **list, t_frmt *frmt)
@@ -70,7 +88,7 @@ void	dirs(t_list **list, t_frmt *frmt)
 void	display_files(t_list **list, t_frmt *frmt)
 {
 	if (frmt->is_l)
-		ft_printf("Total %d\n", 42);
+		ft_printf("Total %d\n", get_block_size(list));
 	files(list, frmt);
 	if (frmt->is_upper_r)
 		dirs(list, frmt);

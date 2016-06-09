@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 10:22:23 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/06 16:25:58 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/09 15:33:24 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		process_flags(char *flags, t_frmt *frmt)
 	}
 }
 
-void		ft_process_args(t_frmt	*frmt, char **argv, int count)
+void		ft_process_args(t_frmt *frmt, char **argv, int count)
 {
 	int	i;
 

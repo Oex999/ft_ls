@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 09:49:47 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 12:47:53 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/09 14:27:44 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct	s_file
 	char		*username;
 	char		*groupname;
 	int			byte_size;
+	int			block_size;
 	char		*date_modified;
 	t_list		*sub_dirs;
 	char		*name;

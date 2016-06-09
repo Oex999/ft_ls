@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 14:34:12 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 13:54:52 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/09 15:42:10 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		is_valid_dir(char *path, char *name, char type)
 	char *full_path;
 
 	full_path = ft_new_path(path, name);
-	if (ft_isdir(full_path) && ft_strncmp(name, "..", 2) != 0 
+	if (ft_isdir(full_path) && ft_strncmp(name, "..", 2) != 0
 			&& ft_strcmp(name, ".") != 0 && type == 'd')
 		return (1);
 	return (0);
@@ -43,10 +43,11 @@ void	read_files(char *path, t_list **list, t_frmt *frmt)
 		n_file->path = ft_new_path(path, n_file->name);
 		if (is_valid_dir(path, n_file->name, n_file->permissions[0])
 				&& frmt->is_upper_r)
-			read_files(ft_new_path(path, ent->d_name), 
+			read_files(ft_new_path(path, ent->d_name),
 					&n_file->sub_dirs, frmt);
 		ft_list_push_back_special(list, sizeof(t_file), n_file);
-		free(n_file);
+		if (n_file)
+			free(n_file);
 	}
 	closedir(dir);
 }

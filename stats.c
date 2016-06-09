@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/07 07:02:47 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 13:15:35 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/09 14:29:41 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ void	ft_getstats(char *path, t_file *file)
 	file->username = getpwuid(f_stats.st_uid)->pw_name;
 	file->groupname = getgrgid(f_stats.st_gid)->gr_name;
 	file->byte_size = (int)f_stats.st_size;
+	file->block_size = (int)f_stats.st_blocks;
 	file->date_modified = ctime(&f_stats.st_ctime);
 }
