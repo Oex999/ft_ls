@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/09 06:49:25 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 11:41:08 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/09 16:10:23 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_list_push_back_special(t_list **list, size_t data_size, void *data)
 {
 	t_list	*tmp;
+
 	tmp = *list;
 	if (tmp)
 	{
