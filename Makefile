@@ -22,7 +22,7 @@ SRC = ft_ls.c error.c process_args.c core.c Utils.c stats.c display_files.c \
 	  ./ListUtils/ft_list_push_back_special.c \
 	  ./ListUtils/ft_list_reverse.c sort.c
 OBJ = $(SRC:.c=.o)
-CC = gcc -g -o
+CC = gcc -o
 CFLAGS = -Wall -Werror -Wextra
 LIBFT = -L ./libft/ -lft
 
@@ -41,3 +41,13 @@ quick:
 	@clear
 	@$(CC) $(NAME) $(CFLAGS) $(SRC) $(LIBFT)
 	@echo "compiled ft_ls."
+
+clean:
+	@rm -f ft_ls
+	@echo "Removed Executable"
+
+fclean: clean
+	@make -C libft/ fclean
+	@echo "Finished Full Clean"
+
+re: fclean all
