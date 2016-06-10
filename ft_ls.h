@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 09:49:47 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 14:27:44 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/10 10:43:27 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,9 @@ void			ft_clear_list(t_list **begin_list);
 t_list			*ft_create_special(size_t data_size, void *data);
 void			ft_list_push_back_special(t_list **list, size_t data_size,
 					void *data);
+
+void			sort(t_list **list, t_frmt *frmt);
+void			ft_list_reverse(t_list **begin_list);
 
 void			ft_error(char *error);
 int				ft_isdir(char *path);

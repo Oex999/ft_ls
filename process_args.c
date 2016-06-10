@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 10:22:23 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 15:33:24 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/10 09:53:08 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,14 @@ void		ft_process_args(t_frmt *frmt, char **argv, int count)
 	int	i;
 
 	i = 1;
-	while (i <= count)
+	frmt->path = ".";
+	if (count == 1 && argv[1][0] == '-')
+		process_flags(argv[1], frmt);
+	if (count == 1 && argv[1][0] != '-')
+		frmt->path = argv[1];
+	if (count == 2 && argv[1][0] == '-' && argv[2][0] != '-')
 	{
-		if (argv[i] && argv[i][0] == '-' && argv[i][1])
-			process_flags(argv[i], frmt);
-		else if (argv[i] && argv[i][0] != '-')
-			frmt->path = argv[i];
-		else
-			frmt->path = ".";
-		i++;
+		process_flags(argv[1], frmt);
+		frmt->path = argv[2];
 	}
 }

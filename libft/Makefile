@@ -6,7 +6,7 @@
 #    By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/05/13 16:42:54 by ddu-toit          #+#    #+#              #
-#    Updated: 2016/06/03 13:43:33 by ghavenga         ###   ########.fr        #
+#    Updated: 2016/06/10 09:13:37 by oexall           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ OBJECTS = ft_memset.o ft_bzero.o ft_memcpy.o ft_memccpy.o ft_memmove.o \
 		ft_printf_format.o ft_printf_flags.o ft_printf_out.o ft_printf.o\
 		ft_printf_conv.o get_next_line.o
 
-CFLAG = -Wall -Werror -Wextra -c
+CFLAG = -g -Wall -Werror -Wextra -c
 
 all: $(NAME)
 
