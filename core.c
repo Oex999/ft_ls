@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 14:34:12 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/10 08:09:50 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/10 16:18:02 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,20 @@ int		is_valid_dir(char *path, char *name, char type)
 			&& ft_strcmp(name, ".") != 0 && type == 'd')
 		return (1);
 	return (0);
+}
+
+void	clear_file(t_file *file)
+{
+	file->path = "";
+	ft_memset(file->permissions, 0, 11);
+	file->nlinks = 0;
+	file->username = "";
+	file->groupname = "";
+	file->byte_size = 0;
+	file->block_size = 0;
+	file->date_modified = "";
+	file->sub_dirs = NULL;
+	file->name = "";
 }
 
 void	read_files(char *path, t_list **list, t_frmt *frmt)
@@ -46,7 +60,7 @@ void	read_files(char *path, t_list **list, t_frmt *frmt)
 			read_files(ft_new_path(path, ent->d_name),
 					&n_file->sub_dirs, frmt);
 		ft_list_push_back_special(list, sizeof(t_file), n_file);
-		n_file = NULL;
+		clear_file(n_file);
 	}
 	free(ent);
 	closedir(dir);
