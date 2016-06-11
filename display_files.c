@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/07 14:51:52 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 14:30:12 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/11 08:43:23 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_print_l_file(t_file *file)
 	ft_putstr(ft_substr(4, 12, file->date_modified));
 	ft_putchar(' ');
 	ft_putstr(file->name);
-
 	ft_putchar('\n');
 }
 

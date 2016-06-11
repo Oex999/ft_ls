@@ -6,13 +6,13 @@
 #    By: oexall <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/06 10:47:52 by oexall            #+#    #+#              #
-#    Updated: 2016/06/10 10:55:46 by oexall           ###   ########.fr        #
+#    Updated: 2016/06/11 08:40:59 by oexall           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_ls
 
-SRC = ft_ls.c error.c process_args.c core.c Utils.c stats.c display_files.c \
+SRC = ft_ls.c error.c process_args.c core.c utils.c stats.c display_files.c \
 	  ft_substring.c \
 	  ./ListUtils/ft_create_elem.c \
 	  ./ListUtils/ft_list_push_back.c \

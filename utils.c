@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/07 08:18:34 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 11:50:23 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/11 08:41:56 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ char	*ft_new_path(char *original, char *dir)
 	new_path = ft_strjoin(new_path, dir);
 	return (new_path);
 }
-
