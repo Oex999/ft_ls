@@ -6,7 +6,7 @@
 #    By: oexall <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/06 10:47:52 by oexall            #+#    #+#              #
-#    Updated: 2016/06/11 09:17:40 by oexall           ###   ########.fr        #
+#    Updated: 2016/06/11 09:24:49 by oexall           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC = ft_ls.c error.c process_args.c core.c utils.c stats.c display_files.c \
 	  ./ListUtils/ft_list_push_back_special.c \
 	  ./ListUtils/ft_list_reverse.c sort.c
 OBJ = $(SRC:.c=.o)
-CC = clang -g -o
+CC = clang -o
 CFLAGS = -Wall -Werror -Wextra
 LIBFT = -L ./libft/ -lft
 
