@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 14:34:12 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/10 16:18:02 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/11 09:19:49 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	clear_file(t_file *file)
 	file->byte_size = 0;
 	file->block_size = 0;
 	file->date_modified = "";
-	file->sub_dirs = NULL;
 	file->name = "";
 }
 
@@ -43,7 +42,8 @@ void	read_files(char *path, t_list **list, t_frmt *frmt)
 	struct dirent	*ent;
 	t_file			*n_file;
 
-	n_file = NULL;
+	dir = NULL;
+	ent = NULL;
 	if ((dir = opendir(path)) == NULL)
 		ft_error("read_file: Failed to open Dir.");
 	while ((ent = readdir(dir)) != NULL)
@@ -57,8 +57,7 @@ void	read_files(char *path, t_list **list, t_frmt *frmt)
 		n_file->path = ft_new_path(path, n_file->name);
 		if (is_valid_dir(path, n_file->name, n_file->permissions[0])
 				&& frmt->is_upper_r)
-			read_files(ft_new_path(path, ent->d_name),
-					&n_file->sub_dirs, frmt);
+			read_files(ft_new_path(path, ent->d_name), &n_file->sub_dirs, frmt);
 		ft_list_push_back_special(list, sizeof(t_file), n_file);
 		clear_file(n_file);
 	}
