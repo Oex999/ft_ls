@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 09:49:47 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/11 08:48:51 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/14 09:21:28 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void				ft_getstats(char *path, t_file *file);
 void				display_files(t_list **list, t_frmt *frmt);
 void				ft_print_l_file(t_file *file);
 char				*ft_substr(int start, int len, char *str);
+void				clear_file(t_file *file);
 
 #endif

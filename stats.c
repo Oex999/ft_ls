@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/07 07:02:47 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 16:38:14 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/14 09:21:48 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ft_getstats(char *path, t_file *file)
 
 	if (stat(path, &f_stats) == -1)
 		ft_error("ft_getstats: Failed to get stats of file");
+	clear_file(file);
 	ft_getpermissions(&f_stats, file);
 	file->nlinks = (int)f_stats.st_nlink;
 	file->username = getpwuid(f_stats.st_uid)->pw_name;

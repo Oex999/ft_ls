@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 14:34:12 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/11 09:31:29 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/14 09:34:14 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	read_files(char *path, t_list **list, t_frmt *frmt)
 				&& frmt->is_upper_r)
 			read_files(ft_new_path(path, ent->d_name), &n_file->sub_dirs, frmt);
 		ft_list_push_back_special(list, sizeof(t_file), n_file);
-		clear_file(n_file);
 	}
 	free(ent);
 	closedir(dir);
