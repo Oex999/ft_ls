@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/07 14:51:52 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/11 08:43:23 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/15 14:24:23 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ void	ft_print_l_file(t_file *file)
 	ft_putstr(file->username);
 	ft_putstr("  ");
 	ft_putstr(file->groupname);
-	ft_putstr("  ");
-	ft_printf("%5d ", file->byte_size);
+	ft_printf(" %6d ", file->byte_size);
 	ft_putstr(ft_substr(4, 12, file->date_modified));
 	ft_putchar(' ');
 	ft_putstr(file->name);

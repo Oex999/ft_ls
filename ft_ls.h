@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 09:49:47 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/14 09:21:28 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/14 13:45:46 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include <pwd.h>
 # include <grp.h>
 # include <time.h>
+
+# include <string.h>
 
 typedef struct		s_list
 {

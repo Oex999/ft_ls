@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/09 06:43:51 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/09 06:48:49 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/14 13:48:23 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ t_list	*ft_create_special(size_t data_size, void *data)
 	if (tmp)
 	{
 		tmp->data = malloc(data_size);
-		tmp->data = ft_memcpy(tmp->data, data, data_size);
+		//tmp->data = ft_memcpy(tmp->data, data, data_size);
+		tmp->data = memcpy(tmp->data, data, data_size);
 		tmp->next = NULL;
 	}
 	else
