@@ -6,7 +6,7 @@
 /*   By: oexall <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/10 10:38:13 by oexall            #+#    #+#             */
-/*   Updated: 2016/06/10 10:41:25 by oexall           ###   ########.fr       */
+/*   Updated: 2016/06/17 07:25:23 by oexall           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ void	ft_list_reverse(t_list **begin_list)
 		tmp2 = tmp2->next;
 		tmp1->next = tmp;
 	}
-	*begin_list = tmp;
+	*begin_list = tmp1;
 }
